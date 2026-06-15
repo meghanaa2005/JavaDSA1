@@ -1,0 +1,29 @@
+# 1. Core Architecture:
+To understand how Java achieves platform independence and handles memory, you need to understand its three core components:
+  #JDK (Java Development Kit): The full software development environment.
+  It contains the compiler , tools, and the JRE. You need this to write and compile Java code.
+  #JRE (Java Runtime Environment): The software package that provides the class libraries and resources that a Java program
+  needs to run.
+  #JVM (Java Virtual Machine): The engine that actually executes the bytecode.The JVM is platform-dependent,
+  (different for Windows, Mac, Linux), but it reads the same platform-independent bytecode.
+# Control statements in java:
+  Control statements in Java are instructions that control the order in which code runs. Normally, Java reads code from top to bottom,
+  line by line. Control statements break this straight path. They let your program make decisions, repeat code, or skip sections.
+#Decision-Making Statements:
+  if Statement: Runs a block of code only if the condition is true. If it is false, Java skips it.
+  if-else Statement: Gives you two paths. It runs one block if the condition is true, and a different block if it is false.
+  else-if Ladder: Used to check many conditions one after another. It runs the block for the first true condition and ignores the rest.
+  Nested if: This is an if statement placed inside another if statement. The inner one only runs if the outer one is true.
+  switch Statement: Best for testing a single variable against a list of exact values. It is cleaner than using many if-else blocks.
+# Looping Statements:
+  for Loop: Best used when you know exactly how many times you want to repeat the code. It puts the setup, the condition, and the 
+  step counter all in one line.
+  while Loop: Checks the condition before running the code. Use this when you do not know the exact number of repeats in advance.
+  do-while Loop: Runs the code block first, and then checks the condition. This means the code will always run at least once, 
+  even if the condition is false right away.
+# Jump Statements:
+  break: Instantly stops and exits a loop or a switch block.
+  continue: Skips the rest of the current loop cycle and jumps straight to the next turn.
+  return: Exits the current method completely and can send a value back.
+  
+  
