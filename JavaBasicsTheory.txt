@@ -1,0 +1,252 @@
+#JAVA BASICS
+Java’s biggest claim to fame is WORA: Write Once, Run Anywhere.
+Unlike languages that compile directly into machine code for a specific operating system (like C++), Java compiles into an intermediate format called Bytecode. 
+Any device with a Java Virtual Machine (JVM) can run this bytecode.
+The Holy Trinity of Java: JVM, JRE, and JDK
+   JVM (Java Virtual Machine): The engine that actually runs the Java bytecode.
+   JRE (Java Runtime Environment): The toolkit needed to run Java programs. It includes the JVM plus core libraries.
+   JDK (Java Development Kit): The full developer setup. It includes the JRE plus development tools like the compiler (javac).
+
+
+#CONTROL STATEMENTS
+In Java, Control Statements are the steering wheel of your code. By default, code executes line by line, from top to bottom.
+Control statements break this linear flow, allowing your program to make decisions, repeat actions, or jump to different sections based on conditions.
+They are divided into three main categories:
+  Decision-Making (Selection) Statements
+  Looping (Iteration) Statements
+  Jump Statements
+
+1. Decision-Making Statements
+  These statements evaluate a boolean condition (true or false) and decide which block of code to run next.
+  A. The if-else Hierarchy
+      Simple if: Executes a block of code only if the condition is true.
+      if-else: Gives an alternative block of code if the condition is false.
+      if-else if ladder: Tests multiple conditions in sequence. The first one that evaluates to true executes, and the rest are skipped.
+      Nested if: An if statement inside another if statement, used for multi-layered conditions.
+ B. The switch Statement
+     Instead of writing dozens of if-else statements, switch tests a single variable against a list of explicit values (called cases).
+     The break keyword: Crucial in a switch. If you omit break, the program will "fall through" and execute all subsequent cases regardless of whether they match.
+     The default case: Acts like the final else; it executes if none of the cases match.
+     Allowed types: byte, short, char, int, String, and Enums.
+
+2. Looping (Iteration) Statements
+   Loops allow you to execute a block of code repeatedly as long as a specified condition remains true.
+   Every loop requires three core components to prevent an infinite loop: Initialization (starting point), Condition (stop criterion), and Increment/Decrement (step size).
+  A. for Loop
+    Best used when you know in advance exactly how many times the loop should run.
+    Syntax structure: for(initialization; condition; increment/decrement) { ... }
+  B. Enhanced for Loop (For-Each)
+     Introduced to strictly iterate through elements of an array or a collection without using an explicit counter or index. It is cleaner and prevents "off-by-one" errors.
+  C. while Loop
+    Best used when you do not know the exact number of iterations beforehand, but you know the condition that must be met to stop. 
+      It checks the condition before executing the loop body (Entry-controlled loop).
+  D. do-while Loop
+    Similar to the while loop, but with one major difference: it checks the condition after executing the loop body (Exit-controlled loop).
+    Because of this, a do-while loop is guaranteed to run at least once, even if the condition is false right from the start.
+
+3. Jump Statements
+    Jump statements unconditionally transfer the control of execution from one part of the program to another.
+    break: Instantly terminates the loop or switch statement entirely and moves to the next line of code immediately following the block.
+    continue: Skips the current iteration of a loop and jumps straight to the next evaluation/increment step. It does not stop the whole loop, just the current round.
+    return: Explicitly returns from a method. It stops executing the entire method and passes control back to whoever called it.
+#Operators
+   In Java, Operators are special symbols that perform specific operations on one, two, or three operands (variables or values) and then return a result.
+1. By the Number of Operands
+   Unary Operators: Work on a single operand (e.g., ++a).
+   Binary Operators: Work on two operands (e.g., a + b). Most Java operators fall into this category.
+   Ternary Operator: Works on three operands (e.g., condition ? trueValue : falseValue).
+2. Functional Categories of Operators
+   A. Arithmetic Operators (The Math Toolkit)
+      Used to perform basic mathematical operations.
+      + (Addition)
+      - (Subtraction)
+      * (Multiplication)
+      / (Division) — Note: If both operands are integers, this performs integer division and drops the remainder (e.g., 5 / 2 is 2, not 2.5).
+      % (Modulus) — Returns the remainder of a division (e.g., 5 % 2 is 1).
+   B. Unary Operators
+      These require only one operand and are used to increment, decrement, or invert a value.
+      ++ (Increment): Increases the value by 1.
+      -- (Decrement): Decreases the value by 1.
+      Prefix (++x): Increments the value before using it in the expression.
+      Postfix (x++): Uses the current value in the expression first, then increments it.
+      ! (Logical Complement): Inverts a boolean value (e.g., !true becomes false).
+
+  C. Relational (Comparison) Operators
+      Used to compare two values. They always return a boolean value (true or false). They are the backbone of your conditional statements (if conditions).
+      == (Equal to) — Don't confuse this with the single = assignment operator!
+      != (Not equal to)
+      > (Greater than)
+      < (Less than)
+      >= (Greater than or equal to)
+      <= (Less than or equal to)
+  D. Logical Operators
+      Used to combine multiple boolean expressions together. They use short-circuit evaluation, meaning they stop evaluating as soon as the final outcome is certain.
+      && (Logical AND): Returns true only if both conditions are true. If the first condition is false, Java doesn't even bother checking the second one.
+      || (Logical OR): Returns true if at least one condition is true. If the first condition is true, it skips checking the second one.
+  E. Assignment Operators
+      Used to assign values to variables.
+      = (Simple Assignment): Assigns the value on the right to the variable on the left.
+      Compound Assignments (+=, -=, *=, /=, %=): Shortcuts that perform an operation and assign the result in one step.
+      x += 5; is exactly the same as writing x = x + 5;
+ F. Bitwise Operators (Advanced)
+      These perform operations directly on the individual bits (0s and 1s) of integer types.
+      & (Bitwise AND), | (Bitwise OR), ^ (Bitwise XOR), ~ (Bitwise Complement).
+      << (Left shift), >> (Right shift).
+
+3. Operator Precedence (Order of Operations)
+      Just like in mathematics, Java evaluates operators in a specific order. For example, multiplication happens before addition.
+      If you want to override the default precedence or just want to make your code easier to read, always use parentheses (). 
+      Parentheses have the highest precedence in Java.
+
+#Functions
+A function in Java is called a method. It is a block of code that performs a specific task.
+Methods help avoid writing the same code multiple times, making programs easier to read, maintain, and reuse.
+ Components of a Method
+   1. Access Modifier
+      Specifies who can access the method.
+      Examples:
+        public
+        private
+        protected
+        Default (no modifier)
+  2. Return Type
+      Specifies what value the method returns.
+      Examples:
+         int
+         double
+         String
+         boolean
+         void (returns nothing)
+ 3. Method Name
+      The identifier used to call the method.
+ 4. Parameters
+      Inputs passed to the method.
+ 5. Method Body
+   Contains the statements executed when the method is called.
+
+Types of Methods
+   1. Predefined (Built-in) Methods
+      These methods are provided by Java's standard libraries.
+      They perform commonly used operations such as mathematical calculations, string manipulation, and input/output operations.
+   2. User-defined Methods
+      These methods are created by the programmer to perform specific tasks according to the application's requirements.
+
+Types of User-defined Methods
+   Methods with no parameters and no return value.
+   Methods with parameters but no return value.
+   Methods with no parameters but with a return value.
+   Methods with both parameters and a return value.
+
+
+#String Functions (Methods) in Java
+   A String in Java is a sequence of characters used to store and manipulate text.
+   Java provides many built-in String methods (functions)to perform operations such as finding length, comparing strings, extracting characters, changing case, searching text, and replacing characters.
+
+ Common String Functions
+   1. length()
+   Returns the number of characters in a string.
+   2. charAt()
+   Returns the character at a specified index.
+   3. substring()
+   Extracts a portion of a string.
+   4. equals()
+   Compares two strings for content equality.
+   Returns true if both strings are equal; otherwise, false.
+   5. equalsIgnoreCase()
+   Compares two strings without considering uppercase and lowercase differences.
+   6. compareTo()
+   Compares two strings lexicographically (dictionary order).
+   Returns:
+   0 if both strings are equal.
+   Positive value if the first string is greater.
+   Negative value if the first string is smaller.
+   7. toUpperCase()
+   Converts all characters of a string to uppercase.
+   8. toLowerCase()
+   Converts all characters of a string to lowercase.
+   9. trim()
+   Removes leading and trailing white spaces from a string.
+   10. contains()
+   Checks whether a string contains a specified sequence of characters.
+   Returns true or false.
+   11. startsWith()
+   Checks whether a string begins with a specified prefix.
+   12. endsWith()
+   Checks whether a string ends with a specified suffix.
+   13. indexOf()
+   Returns the index of the first occurrence of a specified character or substring.
+   14. lastIndexOf()
+   Returns the index of the last occurrence of a specified character or substring.
+   15. replace()
+   Replaces all occurrences of a specified character or substring with another.
+   16. concat()
+   Joins two strings together.
+   17. isEmpty()
+   Checks whether a string is empty.
+   Returns true if the string contains no characters.
+   18. split()
+   Splits a string into multiple parts based on a specified delimiter.
+
+#OOP's
+Object-Oriented Programming (OOP) is a programming paradigm that organizes a program using objects and classes. 
+It focuses on representing real-world entities as objects and helps in developing modular, reusable, and maintainable software.
+Class
+A class is a blueprint or template for creating objects. It defines the properties (data members) and behaviors (methods) of objects.
+Object
+An object is an instance of a class. It represents a real-world entity and contains data and methods defined by its class.
+
+Features (Principles) of OOP
+   1. Encapsulation
+      Encapsulation is the process of wrapping data (variables) and methods (functions) into a single unit called a class.
+      It also restricts direct access to data using access modifiers, ensuring data security.
+         Advantages:
+         Data hiding
+         Improved security
+         Better maintainability
+   2. Inheritance
+      Inheritance is the process by which one class acquires the properties and methods of another class.
+      It promotes code reusability and reduces code duplication.
+         Advantages:
+         Code reusability
+         Easy maintenance
+         Supports hierarchical classification
+   3. Polymorphism
+      Polymorphism means "many forms." It allows the same method or operation to behave differently in different situations.
+      Types of Polymorphism
+         Compile-time Polymorphism: Achieved through method overloading.
+         Run-time Polymorphism: Achieved through method overriding.
+            Advantages:      
+            Flexibility
+            Improved readability
+            Extensibility
+   4. Abstraction
+      Abstraction is the process of hiding implementation details and showing only the essential features to the user.
+         Advantages:      
+         Reduces complexity
+         Improves security
+         Makes programs easier to understand
+
+#Multithreading
+Definition
+   Multithreading is a feature of Java that allows a program to execute multiple threads simultaneously within a single process. 
+   A thread is the smallest unit of execution in a program. 
+   Multithreading improves the performance and efficiency of applications by allowing multiple tasks to run concurrently.
+Thread
+A thread is a lightweight sub-process that executes a sequence of instructions independently. 
+Multiple threads can run within the same program and share the same memory.
+
+Life Cycle of a Thread
+New – The thread is created but not yet started.
+Runnable – The thread is ready to run and is waiting for CPU time.
+Running – The thread is currently executing.
+Blocked/Waiting – The thread is temporarily inactive, waiting for a resource or another thread.
+Terminated (Dead) – The thread has completed execution or has been stopped.
+   
+
+
+
+
+
+
+
+
