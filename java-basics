@@ -25,5 +25,35 @@ To understand how Java achieves platform independence and handles memory, you ne
   break: Instantly stops and exits a loop or a switch block.
   continue: Skips the rest of the current loop cycle and jumps straight to the next turn.
   return: Exits the current method completely and can send a value back.
+# Operators:
+ Arithmetic Operators:
+  + (Addition): Adds two values together.
+  - (Subtraction): Subtracts one value from another.
+  * (Multiplication): Multiplies two values.
+  / (Division): Divides one value by another.
+  % (Modulus): Divides two numbers and gives you the remainder left over.
+# . Unary Operators:
+  ++ (Increment): Increases a value by 1.
+  -- (Decrement): Decreases a value by 1.
+  + (Positive): Indicates a positive value.
+  - (Negative): Turns a positive value into a negative value.
+  ! (Logical NOT): Flips a true value to false, or a false value to true.
+#  Assignment Operators:
+   += , -=, *=, /=: Short ways to do math and assign the result at the same time (e.g., x += 5 is the same as x = x + 5).
+# Relational Operators:
+  == (Equal to): Checks if two values are the same.
+  != (Not equal to): Checks if two values are different.
+  > (Greater than) and < (Less than)
+  >= (Greater than or equal to) and 
+  <= (Less than or equal to).
+# Logical Operators:
+  && (Logical AND): Returns true only if both conditions are true.
+  || (Logical OR): Returns true if at least one condition is true.
+# methods in java:
+Built-in Methods vs User-Defined Methods:
+   Built-in Methods: These are ready-made methods provided by Java. You just use them.
+   User-Defined Methods: These are custom methods created by you to do a specific task.
+
+
   
   
